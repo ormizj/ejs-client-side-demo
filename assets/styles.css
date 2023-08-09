@@ -1,0 +1,26 @@
+/* Sandbox code */
+body {
+  margin: unset;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: rgb(25, 25, 25);
+  display: flex;
+  justify-content: center;
+}
+
+.page {
+  width: 1075px;
+  background: whitesmoke;
+  min-height: calc(100vh - 200px);
+  padding: 65px 25px;
+  box-sizing: border-box;
+}
+.page .puppeteer-pdf {
+  width: 100%;
+}
+
+/* Sandbox code */
+
+/*# sourceMappingURL=styles.css.map */

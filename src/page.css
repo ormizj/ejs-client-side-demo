@@ -1,0 +1,398 @@
+:root {
+  --table-border: 1px solid rgba(0, 0, 0, 0.30);
+  --hidden-border: 1px solid transparent;
+}
+
+* {
+  font-family: Arial, serif;
+  box-sizing: border-box;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.table {
+  width: 100%;
+  font-size: 15px;
+  padding-bottom: 20px;
+}
+.table.all .row-header {
+  grid-template-columns: 51px 210px repeat(5, 1fr);
+}
+.table.all .item {
+  grid-template-columns: 210px repeat(5, 1fr);
+}
+.table.all .tax-grid {
+  grid-template-columns: 51px 210px repeat(5, 1fr);
+}
+.table.all .tax-grid .tax-outer-border {
+  grid-column: 6;
+}
+.table.all .tax-grid .tax {
+  grid-column: 7;
+}
+.table.all .number {
+  min-height: 84px;
+  border-bottom: none;
+}
+.table.all .row-data {
+  border-bottom: var(--table-border);
+}
+.table.all .item-wrapper {
+  width: calc(100% - 51px);
+}
+.table.four {
+  --grid-columns: 51px repeat(6, 1fr);
+}
+.table.four .row-header {
+  grid-template-columns: var(--grid-columns);
+}
+.table.four .item {
+  grid-template-columns: var(--grid-columns);
+}
+.table.four .tax-grid {
+  grid-template-columns: var(--grid-columns);
+}
+.table.four .tax-grid .tax-outer-border {
+  grid-column: 6;
+}
+.table.four .tax-grid .tax {
+  grid-column: 7;
+}
+.table.three {
+  --grid-columns: 51px repeat(5, 1fr);
+}
+.table.three .row-header {
+  grid-template-columns: var(--grid-columns);
+}
+.table.three .item {
+  grid-template-columns: var(--grid-columns);
+}
+.table.three .tax-grid {
+  grid-template-columns: var(--grid-columns);
+}
+.table.three .tax-grid .tax-outer-border {
+  grid-column: 5;
+}
+.table.three .tax-grid .tax {
+  grid-column: 6;
+}
+.table.two {
+  --grid-columns: 51px repeat(4, 1fr);
+}
+.table.two .row-header {
+  grid-template-columns: var(--grid-columns);
+}
+.table.two .item {
+  grid-template-columns: var(--grid-columns);
+}
+.table.two .tax-grid {
+  grid-template-columns: var(--grid-columns);
+}
+.table.two .tax-grid .tax-outer-border {
+  grid-column: 4;
+}
+.table.two .tax-grid .tax {
+  grid-column: 5;
+}
+.table.one {
+  --grid-columns: 51px repeat(3, 1fr);
+}
+.table.one .row-header {
+  grid-template-columns: var(--grid-columns);
+}
+.table.one .item {
+  grid-template-columns: var(--grid-columns);
+}
+.table.one .tax-grid {
+  grid-template-columns: var(--grid-columns);
+}
+.table.one .tax-grid .tax-outer-border {
+  grid-column: 3;
+}
+.table.one .tax-grid .tax {
+  grid-column: 4;
+}
+.table.zero {
+  --grid-columns: 51px calc(60% - 25.5px) calc(40% - 25.5px);
+}
+.table.zero .row-header {
+  grid-template-columns: var(--grid-columns);
+}
+.table.zero .item {
+  grid-template-columns: var(--grid-columns);
+}
+.table.zero .tax-grid {
+  grid-template-columns: var(--grid-columns);
+}
+.table.zero .tax-grid .tax-outer-border {
+  grid-column: 2;
+}
+.table.zero .tax-grid .tax {
+  grid-column: 3;
+}
+
+.row-header, .item, .tax-grid {
+  display: grid;
+  width: 100%;
+}
+
+.row-header {
+  background-color: #EDEDED;
+  color: #2F74A4;
+  font-size: 16px;
+  font-weight: 700;
+  height: 40px;
+}
+.row-header .header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.row-header .header.row-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row-data {
+  display: flex;
+  border-right: var(--table-border);
+  border-left: var(--table-border);
+}
+.row-data:nth-child(2) {
+  border-top: var(--table-border);
+}
+.row-data .number {
+  font-size: 20px;
+  font-weight: 700;
+  width: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-inline-end: var(--table-border);
+}
+.row-data .item-wrapper {
+  width: 100%;
+}
+.row-data .item-wrapper .item {
+  width: 100%;
+  border-bottom: var(--table-border);
+}
+.row-data .item-wrapper .item .item-data {
+  border-inline-end: var(--table-border);
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.row-data .item-wrapper .item .item-data:last-child {
+  border: unset;
+}
+.row-data .item-wrapper .item .item-data.name-wrapper {
+  align-items: unset;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 700;
+}
+.row-data .item-wrapper .item .item-data.name-wrapper .name {
+  font-size: 16px;
+}
+.row-data .item-wrapper .item .item-data.name-wrapper .serial {
+  font-size: 14px;
+  color: #808080;
+}
+.row-data .item-wrapper .item .item-data.amount-wrapper {
+  align-items: unset;
+  flex-direction: column;
+  justify-content: center;
+}
+.row-data .item-wrapper .item-desc-wrapper {
+  text-align: right;
+  min-height: 30px;
+  display: flex;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+}
+.row-data .item-wrapper .item-desc-wrapper.big-pad {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.row-data .item-wrapper .item-desc-wrapper:not(.big-pad) {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.row-data .item-wrapper .item-desc-wrapper:not(.big-pad) .pre-text {
+  margin-top: 5px;
+}
+.row-data .item-wrapper .item-desc-wrapper .pre-text {
+  padding-inline-end: 10px;
+  font-weight: 700;
+}
+.row-data .item-wrapper .item-desc-wrapper .pre-text .pre-text-center {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.row-data .item-wrapper .item-desc-wrapper .item-desc {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.row-data .item-wrapper .item-desc-wrapper .item-desc .note {
+  padding: 5px;
+  width: 100%;
+}
+.row-data .item-wrapper .item-desc-wrapper .item-desc .note:not(:last-child) {
+  border-bottom: dashed 1px black;
+}
+
+.tax-outer-border {
+  border-inline-end: var(--table-border);
+}
+
+.tax-grid {
+  border-inline-end: var(--table-border);
+  border-inline-start: var(--hidden-border);
+}
+.tax-grid .tax {
+  padding: 10px;
+  border-bottom: var(--table-border);
+}
+.tax-grid .tax .section:not(:last-child) {
+  padding-bottom: 10px;
+}
+.tax-grid .tax .tax-text {
+  padding-bottom: 3px;
+}
+
+.addressee {
+  padding-inline-start: 30px;
+  padding-inline-end: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 23px;
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+.addressee > div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.addressee .to .to-header {
+  font-weight: 700;
+  padding-bottom: 24px;
+}
+.addressee .to .to-body {
+  font-size: 20px;
+}
+.addressee .from .project-text, .addressee .from .compound-text {
+  font-weight: 700;
+  padding-inline-end: 5px;
+}
+.addressee .from .from-project, .addressee .from .from-compound {
+  display: flex;
+}
+
+.requirement-info {
+  padding-bottom: 20px;
+}
+.requirement-info .requirement-number {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 700;
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+}
+.requirement-info .requirement-date {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+}
+.requirement-info .requirement-demand {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+}
+.requirement-info .requirement-demand .demand-pre-text {
+  padding-inline-end: 5px;
+}
+.requirement-info .requirement-demand .demand-date {
+  font-weight: 700;
+}
+
+.requirement-footer {
+  background-color: #EDEDED;
+  display: flex;
+  justify-content: space-around;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.requirement-footer > div {
+  padding: 10px;
+  display: flex;
+}
+.requirement-footer > div .icon {
+  margin-inline-end: 10px;
+}
+
+.comments {
+  margin-bottom: 20px;
+  margin-inline-start: 5px;
+}
+.comments .comments-header {
+  font-weight: 700;
+  font-size: 20px;
+}
+.comments .comment-list-wrapper {
+  font-size: 15px;
+  margin-top: 5px;
+  margin-inline-start: 15px;
+}
+
+.supplier-order-text {
+  font-size: 12px;
+  margin-inline-start: 5px;
+  margin-bottom: 20px;
+}
+.supplier-order-text .text-newline {
+  margin-bottom: 10px;
+}
+
+.signature {
+  margin-bottom: 20px;
+  display: flex;
+  height: 150px;
+  align-items: center;
+}
+.signature .signature-baseline {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+.signature .line {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  width: 150px;
+}
+.signature .signature-image-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+.signature .line-text {
+  text-align: center;
+}
+.signature .date {
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=page.css.map */

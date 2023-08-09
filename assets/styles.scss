@@ -1,0 +1,28 @@
+/* Sandbox code */
+body {
+	//noinspection CssReplaceWithShorthandSafely
+	margin: unset;
+	//noinspection CssReplaceWithShorthandSafely
+	margin-top: 100px;
+	//noinspection CssReplaceWithShorthandSafely
+	margin-bottom: 100px;
+	min-height: 100vh;
+	min-width: 100vw;
+	background-color: rgb(25, 25, 25);
+	display: flex;
+	justify-content: center;
+}
+
+.page {
+	width: 1075px;
+	background: whitesmoke;
+	min-height: calc(100vh - 200px);
+	padding: 65px 25px;
+	box-sizing: border-box;
+
+	.puppeteer-pdf{
+		width: 100%;
+	}
+}
+
+/* Sandbox code */
